@@ -1,0 +1,30 @@
+<h2>Book List</h2>
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th>Book ID</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Genre</th>
+      <th>Number of copies available</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.bookId }}</td>
+      <td>{{ book.bookName }}</td>
+      <td>{{ book.bookAuthor }}</td>
+      <td>{{ book.bookGenre }}</td>
+      <td>{{ book.noOfCopies }}</td>
+      <td>
+        <button
+          (click)="borrowBook(book.bookId, book.noOfCopies, book.bookName)"
+          class="btn btn-success"
+        >
+          Borrow
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

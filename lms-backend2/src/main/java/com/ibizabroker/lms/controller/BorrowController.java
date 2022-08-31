@@ -30,7 +30,12 @@ public class BorrowController {
 
     @PostMapping
     public String borrowBook(@RequestBody Borrow borrow) {
-        Users user = usersRepository.findById(borrow.getUserId()).get();
+        //TODO - remove this hardcoding
+        Users user = null;
+        if(borrow.getUserId()==null) {
+            borrow.setUserId(1235);
+        }
+         user = usersRepository.findById(borrow.getUserId()).get();
         Books book = booksRepository.findById(borrow.getBookId()).get();
 
         if (book.getNoOfCopies() < 1) {
