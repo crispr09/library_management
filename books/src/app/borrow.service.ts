@@ -10,10 +10,13 @@ import { Borrow } from './models/borrow';
 export class BorrowService {
   private browseUrl: string;
   constructor(private httpClient: HttpClient) {
-    this.browseUrl = 'http://localhost:8080/borrow';
+    this.browseUrl = 'http://localhost:8099/borrow';
   }
 
   getBookBorrowHistory(bookId: number): Observable<Borrow[]> {
     return this.httpClient.get<Borrow[]>(`${this.browseUrl}/book/${bookId}`);
+  }
+  borrowBook(borrow: Borrow): Observable<Object> {
+    return this.httpClient.post(`${this.browseUrl}`, borrow);
   }
 }
