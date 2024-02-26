@@ -25,6 +25,11 @@ export class BookListComponent {
       this.books = data;
     });
   }
+  clickConfirmMethod(bookId: number) {
+    if (confirm('Are you sure to delete ' + bookId)) {
+      this.deleteBook(bookId);
+    }
+  }
   public deleteBook(bookId: number) {
     console.log('deleteBook ' + bookId);
     this.booksService.deleteBook(bookId).subscribe((data) => {
