@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xs-12">
+    <label style="text-align: center"> Edit Book Below </label>
+  </div>
+</div>
+<div class="row">
+  <div class="form-group">
+    <label style="margin-bottom: 10px"> Book Name </label>
+    <input
+      type="text"
+      class="form-control"
+      style="margin-bottom: 10px"
+      id="bookName"
+      name="bookName"
+      [(ngModel)]="book.bookName"
+    />
+  </div>
+  <div class="form-group">
+    <label style="margin-bottom: 10px"> Book Author </label>
+    <input
+      type="text"
+      class="form-control"
+      style="margin-bottom: 10px"
+      id="bookAuthor"
+      [(ngModel)]="book.bookAuthor"
+      name="bookAuthor"
+    />
+  </div>
+  <div class="form-group">
+    <label style="margin-bottom: 10px"> Book Genre </label>
+    <input
+      type="text"
+      class="form-control"
+      style="margin-bottom: 10px"
+      id="bookGenre"
+      name="bookGenre"
+      [(ngModel)]="book.bookGenre"
+    />
+  </div>
+  <div class="form-group">
+    <label style="margin-bottom: 10px"> Book copies </label>
+    <input
+      type="text"
+      class="form-control"
+      style="margin-bottom: 10px"
+      id="noOfCopies"
+      name="noOfCopies"
+      [(ngModel)]="book.noOfCopies"
+    />
+  </div>
+</div>
+<button type="button " class="btn btn-primary btn-lg" (click)="saveBook()">
+  Save Book
+</button>

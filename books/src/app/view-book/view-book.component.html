@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <label style="text-align: center"> Book Info Below </label>
+  </div>
+</div>
+<table class="table table-info table-striped">
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Issue Date</th>
+      <th>Return Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let borrower of borrow">
+      <!-- <td> {{ getUserData(borrower.userId) }} </td> -->
+      <td>{{ borrower.userId }}</td>
+      <td>{{ borrower.issueDate }}</td>
+      <div *ngIf="borrower.returnDate != null">
+        <td>{{ borrower.returnDate }}</td>
+      </div>
+      <div *ngIf="borrower.returnDate === null">
+        <td>Book not returned yet</td>
+      </div>
+    </tr>
+  </tbody>
+</table>
