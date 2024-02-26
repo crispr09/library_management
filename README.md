@@ -1,5 +1,6 @@
 book project is the angular fronend project for simple library management screen (still Wip)
 lms-backend2 is the back end spring project for the library management
+<img width="647" alt="image" src="https://github.com/crispr09/library_management/assets/45559805/2eb2b534-adc4-4e5f-939f-9a1598c992c2">
 
 do ng install then ng serve
 and mvn clean install and run to run the spring project
